@@ -36,3 +36,77 @@
     transform: rotate(360deg);
   }
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For small devices, display only one list item at a time */
+@media (max-width: 768px) {
+  ul.flex {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    /* Additional styles for hiding scrollbar in WebKit */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  ul.flex li {
+    flex: 0 0 auto;
+    width: 70%;
+    margin-right: 4px; 
+  }
+}
+
+/* Center align list items */
+ul.flex {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; 
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+ul.flex li {
+  margin-right: 12px; 
+  flex: 0 0 auto;
+  white-space: nowrap; 
+}
+
+ul.flex li a {
+  position: relative; 
+}
+
+ul.flex li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; 
+  left: 0;
+  width: 100%;
+ 
+}
+
+.productCard {
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  .productCard {
+    max-height: 80vh;
+  }
+}

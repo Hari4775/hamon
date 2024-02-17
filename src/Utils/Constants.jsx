@@ -1,0 +1,1 @@
+export const product_API =" https://run.mocky.io/v3/db0018c8-5982-4d89-a54f-f51fe14d3c89"
